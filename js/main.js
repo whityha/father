@@ -94,3 +94,76 @@ reserveBackground.addEventListener('click', function () {
 		SURNAME.value = '';
 	}
 });
+
+
+
+//По моему это ES5, ну я пока сделаю так, но потом буду делать на ES6, обещаю)))
+	function RESERVE(DATE, DAYS, NAME, PHONE) {
+		this.DATE = DATE;
+		this.DAYS = DAYS;
+		this.NAME = NAME;
+		this.PHONE = PHONE;		
+	}
+
+	let btn_reserve = document.querySelector('.doit');
+	let successfulWindow = document.querySelector('.successful');
+	let errorWindow = document.querySelector('.error');
+
+	//Отправка формы на сервер
+	btn_reserve.addEventListener('click', function () {
+	var DATE = document.querySelectorAll('#reserveBlock input')[0].value;
+	var DAYS = document.querySelectorAll('#reserveBlock input')[1].value;
+	var NAME = document.querySelectorAll('#reserveBlock input')[2].value;
+	var PHONE = document.querySelectorAll('#reserveBlock input')[3].value;
+
+	
+		
+		//Добавляем для плавности информационных окон после отправки данных на сервер.
+		/*successfulWindow.style.transition = "0.5s";
+		errorWindow.style.transition = "0.5s";*/
+		
+
+		//отправляем запрос только по проверке, что все поля заполнены
+		if (DATE !== '' && PHONE !== '' && NAME !== '' && DAYS !== ''){
+
+			let NewReserve = new RESERVE(DATE, DAYS, NAME, PHONE);				
+			let jsonStringOfArray = JSON.stringify(NewReserve);	
+			console.log(jsonStringOfArray);
+
+		 var client = new XMLHttpRequest();
+		    client.onreadystatechange = function () {
+		    console.log(client.readyState);
+		 	//Закрываем блок и открываем новые только если все поля заполнены
+		 if (client.readyState == 4 && client.status == 200) {
+		 	reserveBlock.classList.add('vis');	
+		 	reserveForm.classList.add('DisplayNone');		 	
+			successfulWindow.classList.remove('vis');
+			successfulTextHolder.classList.remove('DisplayNone');
+		 } else if (client.status == 404) {	
+		 	reserveForm.classList.add('DisplayNone');
+		 	reserveBlock.classList.add('vis');
+		 	errorWindow.classList.remove('vis');
+		 	errorTextHolder.classList.remove('DisplayNone');
+		 } else if (client.readyState == 1 && client.readyState !== 4){ //Добавлено условие, если запрос не отправлен!
+		 	reserveForm.classList.add('DisplayNone');
+		 	reserveBlock.classList.add('vis');
+		 	errorWindow.classList.remove('vis');
+		 	errorTextHolder.classList.remove('DisplayNone');
+		 }}; 
+		 client.open("GET", "https://malorita-sutki.by/mail.php", false);
+		 client.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+		 client.send(jsonStringOfArray);
+		};			
+	});
+
+	let close_btn_window = document.querySelectorAll('.close_btn_window');
+
+	close_btn_window[0].addEventListener('click', function () {
+		successfulWindow.classList.add('DisplayNone');
+		successfulWindow.classList.add('vis');
+	});
+
+	close_btn_window[1].addEventListener('click', function () {
+		errorWindow.classList.add('DisplayNone');
+		errorWindow.classList.add('vis');
+	});
