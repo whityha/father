@@ -1,0 +1,439 @@
+.inner {
+  width: 90%;
+  margin: 0 auto; }
+
+.container-fluid {
+  padding: 0; }
+
+button:focus {
+  outline: none !important; }
+
+.description, .aboutUs, .contacts-section, .price, .footer {
+  border-top: 2px solid #C19D5F; }
+
+body {
+  background: #E2CAA0;
+  font-size: 1em; }
+  @media (min-width: 1600px) {
+    body {
+      font-size: 1.4em; } }
+  @media (min-width: 1200px) and (max-width: 1599px) {
+    body {
+      font-size: 1.2em; } }
+  @media (max-width: 575.99px) {
+    body {
+      font-size: 0.8em; } }
+  @media (max-width: 767.98px) and (min-width: 576px) {
+    body {
+      font-size: 0.9em; } }
+  @media (max-width: 991.98px) and (min-width: 768px) {
+    body {
+      font-size: 1em; } }
+  @media (max-width: 1199.99px) and (min-width: 992px) {
+    body {
+      font-size: 1.1em; } }
+  body #reserveBlock {
+    position: absolute;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 1;
+    z-index: 20; }
+    body #reserveBlock.vis {
+      visibility: hidden;
+      opacity: 0; }
+    body #reserveBlock .backgroundForm {
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      width: 100%;
+      height: 100%;
+      background: black; }
+    body #reserveBlock form {
+      display: flex;
+      flex-direction: column;
+      padding: 2em 2em;
+      font-family: "Comfortaa", Arial, cursive;
+      position: fixed;
+      width: 40%;
+      border-radius: 15px;
+      border: 2px solid #C19D5F;
+      background: #E2D2B6;
+      opacity: 1;
+      left: 30%;
+      top: 10%; }
+      body #reserveBlock form.DisplayBlock {
+        display: none; }
+      @media (max-width: 576px) {
+        body #reserveBlock form {
+          width: 90%;
+          left: 5%;
+          top: 5%; } }
+      body #reserveBlock form p {
+        margin-bottom: 0; }
+      body #reserveBlock form .reserveClose {
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        right: 1em;
+        top: 1em; }
+        body #reserveBlock form .reserveClose:hover {
+          cursor: pointer; }
+      body #reserveBlock form h5 {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 1em; }
+      body #reserveBlock form > input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        font-family: "Comfortaa", Arial, cursive; }
+      body #reserveBlock form .doit {
+        padding: 1em 2.5em;
+        margin-top: 1em;
+        align-self: center;
+        border: 1px solid #C19D5F;
+        border-radius: 2em;
+        background: #E2CAA0;
+        font-size: 1em;
+        color: black;
+        font-family: "Comfortaa", Arial, cursive;
+        transition: .3s; }
+        body #reserveBlock form .doit:hover {
+          cursor: pointer;
+          padding: 1em 5em; }
+  body h3 {
+    font-weight: bold; }
+  body .button-scroll {
+    font-size: 0.8em;
+    font-family: "Comfortaa", Arial, cursive;
+    position: fixed;
+    cursor: pointer;
+    opacity: 0;
+    left: 1em;
+    bottom: 2em;
+    width: 2em;
+    height: 2em;
+    z-index: 1000;
+    color: white;
+    text-shadow: 1px 1px 0px black, -1px 1px 0px black, 1px -1px 0px black, -1px -1px 0px black, 5px 5px 5px black;
+    transition: .5s; }
+  @media (max-width: 575.99px) {
+    body .IPimage {
+      width: 100%; } }
+  body .parallax-window {
+    background: transparent; }
+    body .parallax-window:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -3; }
+  body .header {
+    font-family: "Comfortaa", Arial, cursive;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: relative;
+    font-size: 1em;
+    padding: 0; }
+    @media (max-width: 576px) {
+      body .header {
+        min-height: 700px; } }
+    body .header .btn-order {
+      color: white; }
+      body .header .btn-order:hover {
+        background: transparent;
+        box-shadow: 0px 0px 25px 3px white;
+        outline: none !important; }
+      body .header .btn-order:focus {
+        background: transparent !important; }
+    body .header-menu button {
+      background: url("../images/svg/menu-grey.png") no-repeat center center;
+      background-size: auto 100%;
+      transition: .5s; }
+      body .header-menu button:active {
+        transform: rotate(180deg); }
+    @media (max-width: 575px) {
+      body .header-menu {
+        justify-content: flex-end;
+        margin-bottom: 2em; } }
+    body .header-menu a {
+      display: block;
+      text-decoration: none;
+      align-items: center;
+      position: relative;
+      color: white; }
+      body .header-menu a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        transition: .25s;
+        transform: scaleX(0); }
+      body .header-menu a:hover:before {
+        transform: scaleX(1); }
+    body .header-menu-flex .navbar-brand {
+      font-size: 1.3em; }
+    @media (max-width: 575px) {
+      body .header-menu-flex {
+        flex-direction: column;
+        align-items: flex-end; } }
+    body .header .backgroundTop {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 0;
+      background: url("../images/bgtop-new.jpg") no-repeat left bottom;
+      background-size: cover;
+      z-index: -1;
+      background-attachment: fixed; }
+      @media (max-width: 576px) {
+        body .header .backgroundTop {
+          background: url("../images/bgtop-mobile.webp") no-repeat left bottom;
+          background-size: cover;
+          background-attachment: fixed; } }
+      body .header .backgroundTop:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8); }
+    body .header .header-text {
+      align-items: center; }
+      body .header .header-text .btn-lg {
+        font-size: 2.2em; }
+      body .header .header-text .title {
+        text-align: center;
+        display: block;
+        color: white;
+        font-size: 2.5em; }
+        @media (min-width: 1200px) {
+          body .header .header-text .title {
+            width: 20%; } }
+      @media (max-width: 576px) {
+        body .header .header-text {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center !important; }
+          body .header .header-text .btn-lg {
+            margin-top: 2em; } }
+  body .description {
+    background: #E2CAA0;
+    font-size: 0.9em;
+    font-family: "Comfortaa", Arial, cursive; }
+    body .description-welcome h2 {
+      font-weight: bold;
+      font-size: 2em; }
+      @media (max-width: 576px) {
+        body .description-welcome h2 {
+          text-align: center; } }
+    body .description-row {
+      min-height: 300px; }
+      body .description-row-list {
+        font-size: 1.3em; }
+    body .description ul {
+      list-style-position: inside; }
+      body .description ul .plus {
+        margin-bottom: 1em;
+        min-height: 8em; }
+        @media (max-width: 576px) {
+          body .description ul .plus {
+            min-height: 0; } }
+        @media (max-width: 900px) and (min-width: 679.02px) {
+          body .description ul .plus {
+            min-height: 10em; } }
+        @media (max-width: 679px) and (min-width: 576.02px) {
+          body .description ul .plus {
+            min-height: 12em; } }
+        body .description ul .plus .bold {
+          display: block;
+          padding-left: 1.8em;
+          font-size: 1.4em; }
+        body .description ul .plus .inet {
+          background: url("../images/svg/inet.svg") no-repeat left center;
+          background-size: 1.1em 1.2em; }
+        body .description ul .plus .doc {
+          background: url("../images/svg/doc.svg") no-repeat left center;
+          background-size: 1.1em 1.2em; }
+        body .description ul .plus .bed {
+          background: url("../images/svg/bed.svg") no-repeat left center;
+          background-size: 1.1em 1.2em; }
+        body .description ul .plus .picture {
+          background: url("../images/svg/picture.svg") no-repeat left center;
+          background-size: 1.1em 1.2em; }
+        body .description ul .plus .hands {
+          background: url("../images/svg/hands.svg") no-repeat left center;
+          background-size: 1.3em 1em; }
+        body .description ul .plus .time {
+          background: url("../images/svg/time.svg") no-repeat left center;
+          background-size: 1.1em 1.1em; }
+        body .description ul .plus .TV {
+          background: url("../images/svg/TV.svg") no-repeat left center;
+          background-size: 1.1em 1.1em; }
+        body .description ul .plus .kitchen {
+          background: url("../images/svg/kitchen.svg") no-repeat left center;
+          background-size: auto 70%; }
+    @media (max-width: 576px) {
+      body .description p {
+        text-align: justify; } }
+  body .aboutUs {
+    background: #E2D2B6;
+    font-family: "Comfortaa", Arial, cursive; }
+    body .aboutUs-prices {
+      font-size: 0.8em; }
+    body .aboutUs .vertical-center {
+      display: flex;
+      align-self: center;
+      flex-direction: column; }
+      body .aboutUs .vertical-center .btn-IP {
+        width: 20em; }
+    body .aboutUs .card {
+      background: #E2CAA0;
+      margin-bottom: 2em; }
+    body .aboutUs .card-text {
+      background: white;
+      font-family: Arial;
+      font-size: 0.7em;
+      text-align: justify; }
+      body .aboutUs .card-text h4, body .aboutUs .card-text h5, body .aboutUs .card-text h6 {
+        font-weight: bold;
+        padding: 0 .4em; }
+      body .aboutUs .card-text h4, body .aboutUs .card-text h5 {
+        text-align: center; }
+      body .aboutUs .card-text h4 {
+        font-size: 1.6em; }
+      body .aboutUs .card-text h5 {
+        font-size: 1.35em; }
+      body .aboutUs .card-text h6 {
+        font-size: 1.1em; }
+      body .aboutUs .card-text .forh4 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1em; }
+    body .aboutUs button {
+      background: transparent;
+      box-shadow: 0px 0px 10px 2px #C19D5F;
+      border-radius: 5px; }
+      body .aboutUs button:focus {
+        box-shadow: 0px 0px 10px 2px #C19D5F !important; }
+    body .aboutUs .btn-IP:hover {
+      cursor: pointer; }
+  body .gallery {
+    background: #E2CAA0; }
+    body .gallery .d-block {
+      border-radius: 20px; }
+  body .map-contacts {
+    padding-bottom: 3em; }
+    body .map-contacts .mapAndContacts {
+      display: flex;
+      justify-content: space-between;
+      height: 20em; }
+      @media (max-width: 576px) {
+        body .map-contacts .mapAndContacts {
+          flex-direction: column;
+          height: auto; } }
+      body .map-contacts .mapAndContacts .map {
+        flex-grow: .7; }
+      body .map-contacts .mapAndContacts .contacts {
+        align-self: center;
+        margin-left: 3em; }
+        @media (max-width: 576px) {
+          body .map-contacts .mapAndContacts .contacts {
+            margin-left: 0em;
+            margin-top: 2em; } }
+        body .map-contacts .mapAndContacts .contacts-list {
+          font-family: "Comfortaa", Arial, cursive;
+          font-size: 0.8em; }
+          body .map-contacts .mapAndContacts .contacts-list li {
+            margin-bottom: 2em;
+            padding-left: 2em; }
+            body .map-contacts .mapAndContacts .contacts-list li:nth-child(1) {
+              background: url("../images/svg/1239525.svg") no-repeat left center;
+              background-size: 1.5em auto; }
+            body .map-contacts .mapAndContacts .contacts-list li:nth-child(2) {
+              background: url("../images/svg/email.svg") no-repeat left center;
+              background-size: 1.5em 100%; }
+            body .map-contacts .mapAndContacts .contacts-list li:nth-child(3) {
+              background: url("../images/svg/phone.svg") no-repeat left center;
+              background-size: 1.5em 100%; }
+            body .map-contacts .mapAndContacts .contacts-list li:nth-child(4) {
+              background: url("../images/svg/man.svg") no-repeat left center;
+              background-size: 1.3em auto; }
+          body .map-contacts .mapAndContacts .contacts-list span {
+            font-weight: bold; }
+  body .price {
+    background: #E2D2B6;
+    font-family: "Comfortaa", Arial, cursive;
+    font-size: 1em; }
+    body .price h2 {
+      font-weight: bold; }
+      @media (max-width: 576px) and (min-width: 361px) {
+        body .price h2 {
+          text-align: center;
+          margin-bottom: 1em; } }
+      @media (max-width: 360px) {
+        body .price h2 {
+          font-size: 2em; } }
+    body .price .price-one {
+      margin-bottom: .5em; }
+  body .footer {
+    font-family: "Comfortaa", Arial, cursive;
+    font-size: 0.85em;
+    background: #2E2A24; }
+    body .footer .container-fluid {
+      padding: 2.5em 0em;
+      display: flex; }
+      @media (max-width: 576px) {
+        body .footer .container-fluid {
+          flex-direction: column; } }
+      body .footer .container-fluid li {
+        color: white;
+        text-shadow: 5px 5px 5px black; }
+      body .footer .container-fluid a {
+        text-decoration: none;
+        color: white; }
+      body .footer .container-fluid .footer-menu {
+        text-align: right;
+        flex-grow: .2; }
+        body .footer .container-fluid .footer-menu-list {
+          justify-content: center; }
+          body .footer .container-fluid .footer-menu-list li {
+            width: auto;
+            transition: .3s;
+            padding-bottom: 0.5em; }
+          body .footer .container-fluid .footer-menu-list li:hover {
+            transform: translate(-0.4em, -0.2em);
+            text-shadow: 10px 10px 5px black; }
+      body .footer .container-fluid .footer-logo {
+        text-align: right;
+        flex-grow: .8;
+        align-self: center;
+        color: white;
+        padding-left: 4em;
+        text-shadow: 5px 5px 5px black; }
+        @media (max-width: 576px) {
+          body .footer .container-fluid .footer-logo {
+            display: none; } }
+      body .footer .container-fluid .footer-contacts {
+        font-size: 0.8em;
+        align-self: center; }
+        @media (max-width: 576px) {
+          body .footer .container-fluid .footer-contacts {
+            display: none; } }
+
+/*# sourceMappingURL=style.css.map */
