@@ -1,14 +1,40 @@
 <?php
-  //Если форма отправлена
-  if(isset($_POST['submit'])) {
+ 
+$post = (!empty($_POST)) ? true : false;
+ 
+if($post)
+{
+$name = htmlspecialchars($_POST["name"]);
+$date = htmlspecialchars($_POST["date"]);
+$tel = htmlspecialchars($_POST["tel"]);
+$date = htmlspecialchars($_POST["days"]);
+$error = '';
+ 
 
- //Если ошибок нет, отправить email
-  if(!isset($hasError)) {
-  $emailTo = '2042_2042@mail.ru'; //Сюда введите Ваш email
-  $body = "Name: $uname \n\nDAYS: $uemail \n\nNumber: $unnumber";
-  $headers = 'From: My Site <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
- mail($emailTo, $subject, $body, $headers);
-  $emailSent = true;
-  }
-  }
-  ?>
+if(!$error)
+{
+ 
+ 
+$name_tema = "=?utf-8?b?". base64_encode($name) ."?=";
+ 
+$subject ="Новая заявка с сайта";
+$subject1 = "=?utf-8?b?". base64_encode($subject) ."?=";
+/*
+$date ="\n\nСообщение: ".$date."\n\nИмя: " .$name."\n\nТелефон: ".$tel."\n\n";
+*/
+$message1 ="\nName: ".$name."\n\nТелефон: " .$tel."\n\nДата заселения: " .$date."\n\nКоличество дней: ".$days."\n\n";    
+ 
+ 
+$header = "Content-Type: text/plain; charset=utf-8\n";
+ 
+$header .= "From: Новая заявка <n.a.khapaliuk@gmail.com>\n\n";  
+$mail = mail("n.a.khapaliuk@gmail.com", $subject1, iconv ('utf-8', 'windows-1251', $message1), iconv ('utf-8', 'windows-1251', $header));
+ 
+if($mail)
+{
+echo 'OK';
+}
+ 
+} 
+}
+?>

@@ -98,7 +98,7 @@ reserveBackground.addEventListener('click', function () {
 
 
 //По моему это ES5, ну я пока сделаю так, но потом буду делать на ES6, обещаю)))
-	function RESERVE(DATE, DAYS, NAME, PHONE) {
+	/*function RESERVE(DATE, DAYS, NAME, PHONE) {
 		this.DATE = DATE;
 		this.DAYS = DAYS;
 		this.NAME = NAME;
@@ -108,13 +108,15 @@ reserveBackground.addEventListener('click', function () {
 	let btn_reserve = document.querySelector('.doit');
 	let successfulWindow = document.querySelector('.successful');
 	let errorWindow = document.querySelector('.error');
+	let successfulTextHolder = document.querySelector('#sucTextHolder');
+	let errorTextHolder = document.querySelector('#errorTextHolder');
 
 	//Отправка формы на сервер
 	btn_reserve.addEventListener('click', function () {
 	var DATE = document.querySelectorAll('#reserveBlock input')[0].value;
 	var DAYS = document.querySelectorAll('#reserveBlock input')[1].value;
 	var NAME = document.querySelectorAll('#reserveBlock input')[2].value;
-	var PHONE = document.querySelectorAll('#reserveBlock input')[3].value;
+	var PHONE = document.querySelectorAll('#reserveBlock input')[3].value;*/
 
 	
 		
@@ -124,7 +126,7 @@ reserveBackground.addEventListener('click', function () {
 		
 
 		//отправляем запрос только по проверке, что все поля заполнены
-		if (DATE !== '' && PHONE !== '' && NAME !== '' && DAYS !== ''){
+		/*if (DATE !== '' && PHONE !== '' && NAME !== '' && DAYS !== ''){
 
 			let NewReserve = new RESERVE(DATE, DAYS, NAME, PHONE);				
 			let jsonStringOfArray = JSON.stringify(NewReserve);	
@@ -133,13 +135,14 @@ reserveBackground.addEventListener('click', function () {
 		 var client = new XMLHttpRequest();
 		    client.onreadystatechange = function () {
 		    console.log(client.readyState);
+		    console.log(client.status);
 		 	//Закрываем блок и открываем новые только если все поля заполнены
 		 if (client.readyState == 4 && client.status == 200) {
 		 	reserveBlock.classList.add('vis');	
 		 	reserveForm.classList.add('DisplayNone');		 	
 			successfulWindow.classList.remove('vis');
 			successfulTextHolder.classList.remove('DisplayNone');
-		 } else if (client.status == 404) {	
+		 } else if (client.status == 404 || client.status == 500) {	
 		 	reserveForm.classList.add('DisplayNone');
 		 	reserveBlock.classList.add('vis');
 		 	errorWindow.classList.remove('vis');
@@ -150,9 +153,10 @@ reserveBackground.addEventListener('click', function () {
 		 	errorWindow.classList.remove('vis');
 		 	errorTextHolder.classList.remove('DisplayNone');
 		 }}; 
-		 client.open("GET", "https://malorita-sutki.by/mail.php", false);
+		 client.open("POST", "mail.php", false);
 		 client.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 		 client.send(jsonStringOfArray);
+		 console.log(client.responseText);
 		};			
 	});
 
@@ -166,4 +170,4 @@ reserveBackground.addEventListener('click', function () {
 	close_btn_window[1].addEventListener('click', function () {
 		errorWindow.classList.add('DisplayNone');
 		errorWindow.classList.add('vis');
-	});
+	});*/
